@@ -1,0 +1,140 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/25/2016  10:57:37  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\keypad PRINT (.\Listings\keypad.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CCASE)
+
+
+LINK MAP OF MODULE:  .\Objects\keypad (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         _DATA_GROUP_
+            IDATA   000DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     011CH     UNIT         ?C?LIB_CODE
+            CODE    011FH     00A0H     UNIT         ?PR?PRESSKEY?MAIN
+            CODE    01BFH     000CH     UNIT         ?C_C51STARTUP
+            CODE    01CBH     0009H     UNIT         ?PR?MAIN?MAIN
+            CODE    01D4H     0004H     UNIT         ?CO?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\keypad (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  -----    -----
+  +--> ?PR?PRESSKEY?MAIN
+
+?PR?PRESSKEY?MAIN              0008H    0005H
+  +--> ?CO?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\keypad (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/25/2016  10:57:37  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:01CBH         PUBLIC        main
+  C:01D4H         SYMBOL        _?ix1000
+  C:011FH         PUBLIC        presskey
+  -------         PROC          PRESSKEY
+  -------         DO            
+  D:0007H         SYMBOL        k
+  D:0008H         SYMBOL        key
+  D:0009H         SYMBOL        ch
+  -------         ENDDO         
+  C:011FH         LINE#         3
+  C:011FH         LINE#         4
+  C:011FH         LINE#         5
+  C:0132H         LINE#         6
+  C:0132H         LINE#         7
+  C:0132H         LINE#         8
+  C:0134H         LINE#         9
+  C:013BH         LINE#         10
+  C:013EH         LINE#         11
+  C:0145H         LINE#         12
+  C:014CH         LINE#         13
+  C:014CH         LINE#         14
+  C:014CH         LINE#         15
+  C:014FH         LINE#         16
+  C:0153H         LINE#         17
+  C:0156H         LINE#         18
+  C:018FH         LINE#         19
+  C:0192H         LINE#         20
+  C:0195H         LINE#         21
+  C:0198H         LINE#         22
+  C:019BH         LINE#         23
+  C:019EH         LINE#         24
+  C:01A1H         LINE#         25
+  C:01A4H         LINE#         26
+  C:01A7H         LINE#         27
+  C:01AAH         LINE#         28
+  C:01ADH         LINE#         29
+  C:01B0H         LINE#         30
+  C:01B3H         LINE#         31
+  C:01B6H         LINE#         32
+  C:01B9H         LINE#         33
+  C:01BCH         LINE#         34
+  C:01BEH         LINE#         35
+  C:01BEH         LINE#         36
+  C:01BEH         LINE#         37
+  -------         ENDPROC       PRESSKEY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        getkey
+  -------         ENDDO         
+  C:01CBH         LINE#         6
+  C:01CBH         LINE#         7
+  C:01CBH         LINE#         8
+  C:01CDH         LINE#         10
+  C:01CDH         LINE#         11
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/25/2016  10:57:37  PAGE 3
+
+
+  C:01CDH         LINE#         12
+  C:01D0H         LINE#         13
+  C:01D2H         LINE#         14
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?COPY
+  C:00D3H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?CCASE
+  C:00F9H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+Program Size: data=14.0 xdata=0 code=472
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
